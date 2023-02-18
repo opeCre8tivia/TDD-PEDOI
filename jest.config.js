@@ -21,7 +21,10 @@ const customJestConfig = {
 
   moduleNameMapper: {
     //pick componets inside src folder
-    "^@/src/(.*)$": "<rootDir>/src/components/$1",
+    "^@/src/(.*)$": "<rootDir>/src$1",
+
+    //all pages
+    "^@/pages/(.*)": "<rootDir>/pages/$1",
   },
   testEnvironment: "jest-environment-jsdom",
 };
