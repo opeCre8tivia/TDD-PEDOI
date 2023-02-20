@@ -2388,6 +2388,13 @@ has@^1.0.3:
   dependencies:
     function-bind "^1.1.1"
 
+hero-slider@^3.1.0:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/hero-slider/-/hero-slider-3.1.0.tgz#540f3e38dccde0add7a2a9c83c918bae86fe64f1"
+  integrity sha512-NdxAGb3X+WOjIYRYorodvLqvDzNZPUGe7bK3LIunT3uHm4o1uV21dHmL/nmUo6CdpsNNx166W9LM2p5WPuW3wQ==
+  dependencies:
+    react-intersection-observer "9.4.0"
+
 html-encoding-sniffer@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/html-encoding-sniffer/-/html-encoding-sniffer-3.0.0.tgz#2cb1a8cf0db52414776e5b2a7a04d5dd98158de9"
@@ -3819,6 +3826,11 @@ react-icons@^4.7.1:
   version "4.7.1"
   resolved "https://registry.yarnpkg.com/react-icons/-/react-icons-4.7.1.tgz#0f4b25a5694e6972677cb189d2a72eabea7a8345"
   integrity sha512-yHd3oKGMgm7zxo3EA7H2n7vxSoiGmHk5t6Ou4bXsfcgWyhfDKMpyKfhHR6Bjnn63c+YXBLBPUql9H4wPJM6sXw==
+
+react-intersection-observer@9.4.0:
+  version "9.4.0"
+  resolved "https://registry.yarnpkg.com/react-intersection-observer/-/react-intersection-observer-9.4.0.tgz#f6b6e616e625f9bf255857c5cba9dbf7b1825ec7"
+  integrity sha512-v0403CmomOVlzhqFXlzOxg0ziLcVq8mfbP0AwAcEQWgZmR2OulOT79Ikznw4UlB3N+jlUYqLMe4SDHUOyp0t2A==
 
 react-is@^16.13.1:
   version "16.13.1"
