@@ -37,9 +37,12 @@ const Menu = () => {
   return (
     <div className=" hidden md:flex w-auto items-center gap-5 mr-5 ml-5 ">
       {_menu &&
-        _menu.map((item: MenuItem) => {
+        _menu.map((item: MenuItem, index: number) => {
           return (
-            <div className=" text-[16px]  font-semibold text-gray-600 text-center hover:text-green-300">
+            <div
+              key={item.id}
+              className=" text-[16px]  font-semibold text-gray-600 text-center hover:text-green-300"
+            >
               {item.title}
             </div>
           );

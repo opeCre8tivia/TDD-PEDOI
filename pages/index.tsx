@@ -13,6 +13,7 @@ import Hero from "@/src/components/Hero";
 import CircleList from "@/src/components/CircleList";
 import WhoWeAre from "@/src/components/WhoWeAre";
 import ClusterSection from "@/src/components/ClusterSection";
+import CashewSection from "@/src/components/CashewSection";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -40,6 +41,9 @@ export default function Home() {
         <WhoWeAre />
         {/* cluster section */}
         <ClusterSection />
+        {/* Cashew section */}
+        <CashewSection />
+        {/*  */}
 
         {/* About section */}
         <Header />
