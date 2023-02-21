@@ -12,7 +12,7 @@ interface Logo {
 
 const Logo = ({ styles }: Logo) => {
   return (
-    <div className=" w-[50px] h-[50px] md:w-[90px] md:h-[90px] flex justify-center items-center mr-5 ml-5">
+    <div className=" w-[50px] h-[50px] md:w-[60px] md:h-[60px] flex justify-center items-center mr-5 ml-5">
       <Image
         src="/pedoi_logo.png"
         width={100}
