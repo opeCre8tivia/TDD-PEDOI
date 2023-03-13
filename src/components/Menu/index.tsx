@@ -39,7 +39,7 @@ const Menu = () => {
       {_menu &&
         _menu.map((item: MenuItem) => {
           return (
-            <div className=" text-[16px]  font-semibold text-gray-600 text-center hover:text-green-300">
+            <div key={Math.random()} className=" text-[16px]  font-semibold text-gray-600 text-center hover:text-green-300">
               {item.title}
             </div>
           );
