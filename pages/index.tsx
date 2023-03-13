@@ -7,13 +7,16 @@ import Head from "next/head";
 import Image from "next/image";
 import { Inter } from "@next/font/google";
 import styles from "@/styles/Home.module.css";
-import Header from "@/src/components/Header";
+import Aic from "@/src/components/AIC";
 import NavBar from "@/src/components/NavBar";
 import Hero from "@/src/components/Hero";
 import CircleList from "@/src/components/CircleList";
 import WhoWeAre from "@/src/components/WhoWeAre";
 import ClusterSection from "@/src/components/ClusterSection";
 import CashewSection from "@/src/components/CashewSection";
+import WhyUs from "@/src/components/WhyUs";
+import Footer from "@/src/components/Footer";
+import ChickenAmonth from "@/src/components/ChickenAmonth";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -45,8 +48,17 @@ export default function Home() {
         <CashewSection />
         {/*  */}
 
-        {/* About section */}
-        <Header />
+        {/* aic section */}
+        <Aic />
+
+        {/* chicken a month */}
+        <ChickenAmonth />
+
+        {/* why us section */}
+        <WhyUs />
+
+        {/* footer */}
+        <Footer />
       </main>
     </>
   );

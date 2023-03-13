@@ -19,17 +19,17 @@ const Menu = () => {
       href: "#",
     },
     {
-      id: 2,
+      id: 3,
       title: "Projects",
       href: "#",
     },
     {
-      id: 1,
+      id: 4,
       title: "About us",
       href: "#",
     },
     {
-      id: 1,
+      id: 5,
       title: "Contact",
       href: "#",
     },
@@ -41,7 +41,7 @@ const Menu = () => {
           return (
             <div
               key={item.id}
-              className=" text-[16px]  font-semibold text-gray-600 text-center hover:text-green-300"
+              className=" text-[16px]  font-semibold text-gray-600 text-center transform duration-500 hover:text-green-300"
             >
               {item.title}
             </div>
