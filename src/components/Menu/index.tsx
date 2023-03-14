@@ -40,8 +40,8 @@ const Menu = () => {
         _menu.map((item: MenuItem, index: number) => {
           return (
             <div
-              key={item.id}
-              className=" text-[16px]  font-semibold text-gray-600 text-center transform duration-500 hover:text-green-300"
+              key={Math.random()}
+              className=" text-[16px]  font-semibold text-gray-600 text-center hover:text-green-300"
             >
               {item.title}
             </div>
