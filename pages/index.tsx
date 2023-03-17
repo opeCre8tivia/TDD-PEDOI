@@ -27,7 +27,7 @@ export default function Home() {
         <title>PEDOI</title>
         <meta
           name="description"
-          content="PEDOI | Professional EnterPrice Development Organisation International"
+          content="PEDOI | Professional Enterprice Development Organisation International"
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
