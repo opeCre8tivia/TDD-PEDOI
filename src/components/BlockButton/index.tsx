@@ -26,7 +26,7 @@ const BlockButton = ({ title, styles, onClick, classNames }: Button) => {
   return (
     <div
       onClick={onClick}
-      className={` w-[70%] min-w-[70%] h-[50px] rounded-full p-4  md:w-[25%] md:min-w-[25%] bg-green-600 hover:bg-green-300 text-[16px] capitalize text-white text-center font-semibold flex justify-center items-center ${classNames}`}
+      className={`h-[50px] rounded-full p-4 w-fit mt-4 mb-4  pl-10 pr-10 bg-green-600 hover:bg-gradient-to-tr hover:from-green-600 hover:to-green-400 text-[16px] capitalize text-white text-center font-semibold flex justify-center items-center ${classNames}`}
       style={styles}
       data-testid="block_button"
     >

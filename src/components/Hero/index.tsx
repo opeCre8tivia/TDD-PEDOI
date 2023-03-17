@@ -17,7 +17,8 @@ const Hero = () => {
           <BlockButton
             onClick={() => console.log("cliq")}
             title="LEARN MORE"
-            classNames="hidden md:block bg-gray-100 text-green-400 hover:bg-green-400 hover:text-white"
+            classNames="bg-white text-green-600 hover:bg-gray-300"
+            styles={{ color: "green" }}
           />
         </div>
       </div>
