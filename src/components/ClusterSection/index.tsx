@@ -1,28 +1,25 @@
 import React from "react";
-import {
-  AiFillAccountBook,
-  AiOutlineArrowRight,
-  AiOutlineArrowsAlt,
-} from "react-icons/ai";
+import { AiOutlineArrowRight } from "react-icons/ai";
+import { GiRoastChicken, GiGrain, GiPlantRoots } from "react-icons/gi";
 
 const ClusterSection = () => {
   const _cluster = [
     {
-      icon: <AiFillAccountBook size={30} color="#fff" />,
+      icon: <GiPlantRoots size={30} color="#fff" />,
       title: "Cassava Cluster",
-      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.",
+      text: "Cassava is an economically viable crop that has the potential to provide both food and income.For example,Cassava starch was valued at $4.4 billion in 2020 in the global market.Learn how you can invest in cassava",
       uri: "",
     },
     {
-      icon: <AiFillAccountBook size={30} color="#fff" />,
-      title: "Paultry Cluster",
-      text: "",
+      icon: <GiRoastChicken size={30} color="#fff" />,
+      title: "Poultry Cluster",
+      text: "The African poultry industry is estimated to be worth over $15 billion and is projected to grow to $28.8 billion by 2025.We have a well tailored investment perk that offers high return possibilities. Find out more now ",
       uri: "",
     },
     {
-      icon: <AiFillAccountBook size={30} color="#fff" />,
+      icon: <GiGrain size={30} color="#fff" />,
       title: "Rice Cluster",
-      text: "",
+      text: "The total value of rice production in the East African Community region is estimated at over $1 billion annually and over $150 million in uganda alone.Find out how you can Invest in rice ",
       uri: "",
     },
   ];
@@ -37,7 +34,7 @@ const ClusterSection = () => {
         {item.icon}
       </div>
 
-      <div className="text-clip text-[16px] text-green-600 font-bold ">
+      <div className="text-clip text-[18px] text-gray-600 font-bold ">
         {item.title}
       </div>
 

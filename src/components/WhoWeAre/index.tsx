@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 import BlockButton from "../BlockButton";
 
@@ -11,23 +12,34 @@ const WhoWeAre = () => {
         </div>
 
         <div className="mt-6 mb-6 font-bold text-black text-[35px]">
-          A Professionals Development Organisation
+          A Professional Development Organisation
         </div>
 
-        <div className="text-gray-600 text-[16px]">
-          Viverra pellentesque lorem congue libero platea facilisi. Nisi pede
-          ante ornare gravida dui tortor platea dolor velit. Scelerisque sapien
-          tempus a fusce magnis nisi.
+        <div className="text-gray-600 text-[18px] w-[80%]">
+          We are committed to promoting sustainable agriculture and food
+          security. We have therefore created investment opportunities in
+          farming and agribusiness that contribute to the growth and development
+          of local economies.
         </div>
 
         <BlockButton
           title="Discover More"
           onClick={() => console.log("---> more")}
-          classNames="h-[46px] rounded-[23px] mt-6 mb-6 p-0  w-[100px]"
         />
       </div>
 
-      <div className="w-[100%] h-[400px] md:h-[500px] md:w-[50%] border-green-600 border-[8px] bg-green-600 bg-gradient-to-tr rounded-[20px] "></div>
+      <div className="w-[100%] h-[400px] md:h-[500px] md:w-[50%] p-[8px] bg-gradient-to-tr from-green-600 to-green-400 rounded-[20px] object-cover ">
+        <img
+          alt="picture of gardners"
+          src="/pedoi-team-min.jpg"
+          style={{
+            borderRadius: "20px",
+            width: "100%",
+            height: "100%",
+            objectFit: "cover",
+          }}
+        />
+      </div>
     </div>
   );
 };
