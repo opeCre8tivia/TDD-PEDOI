@@ -14,7 +14,12 @@ const Hero = () => {
             onClick={() => console.log("cliq")}
             title="GET STARTED"
           />
-          <BlockButton onClick={() => console.log("cliq")} title="LEARN MORE" />
+          <BlockButton
+            onClick={() => console.log("cliq")}
+            title="LEARN MORE"
+            classNames="bg-white text-green-600 hover:bg-gray-300"
+            styles={{ color: "green" }}
+          />
         </div>
       </div>
     </div>
