@@ -30,8 +30,25 @@ model Users {
   mobileNumber String
   password   String
   isActive   Status @default(ACTIVE)
+  questionaire Questionaire?
   created_at DateTime @default(now())
   updated_at DateTime @default(now())
+}
+
+model Questionaire {
+    id         String @id @default(auto()) @map("_id") @db.ObjectId
+    userId     String @db.ObjectId @unique
+    user       Users  @relation(fields: [userId],references: [id])
+    roles      String[]
+    initiatives String[]  
+    numberOfGardens Int  @default(0)
+    resources   String[]
+    district    String
+    county      String  
+    subCounty   String 
+    zone        String
+    created_at DateTime @default(now())
+    updated_at DateTime @default(now())
 }
 
 
@@ -40,3 +57,4 @@ enum Status {
   ACTIVE
   INACTIVE
 }
+
