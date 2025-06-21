@@ -13,7 +13,7 @@ interface Logo {
 
 const Logo = ({ styles }: Logo) => {
   return (
-    <div className=" w-[50px] h-[50px] md:w-[60px] md:h-[60px] flex justify-center items-center mr-5 ml-5">
+    <div className=" w-[80px] h-[80px] md:w-[80px] md:h-[80px] flex justify-center items-center mr-2 ml-2">
       <Image
         src={logo.src}
         width={100}

@@ -3,9 +3,14 @@
 import React from "react";
 import BlockButton from "../BlockButton";
 
+
+
 const CashewSection = () => {
   return (
-    <div className="w-full min-h-[350px] relative flex justify-center justify-items-center  bg-no-repeat bg-cover">
+    <div
+      className="w-full min-h-[350px] relative flex justify-center justify-items-center bg-no-repeat bg-cover"
+      style={{ backgroundImage: "url('/assets/cashew-seed.jpg')" }}
+     >
       <div className=" w-full h-[350px] font-bold text-[22px] md:text-[30px] text-white text-center bg-[rgba(0,0,0,0.7)] flex flex-col justify-center items-center ">
         <div data-testid="cashew_section_title">
           {" "}

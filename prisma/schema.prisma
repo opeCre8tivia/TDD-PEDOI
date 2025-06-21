@@ -20,3 +20,23 @@ model Admin {
   email String @unique
   password String
 }
+
+
+model Users {
+  id         String @id @default(auto()) @map("_id") @db.ObjectId
+  firstName  String
+  lastName   String
+  email      String @unique
+  mobileNumber String
+  password   String
+  isActive   Status @default(ACTIVE)
+  created_at DateTime @default(now())
+  updated_at DateTime @default(now())
+}
+
+
+
+enum Status {
+  ACTIVE
+  INACTIVE
+}

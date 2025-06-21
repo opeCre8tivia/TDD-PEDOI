@@ -1,4 +1,6 @@
-import { Calendar, Home, Inbox, Search, Settings } from "lucide-react"
+"use client"
+
+import {Users,LayoutDashboard } from "lucide-react"
 
 import {
   Sidebar,
@@ -11,48 +13,48 @@ import {
   SidebarMenuItem,
 } from "@/components/ui/sidebar"
 
+import { usePathname } from "next/navigation";
+
 // Menu items.
 const items = [
   {
-    title: "Home",
-    url: "#",
-    icon: Home,
+    title: "Dashboard",
+    url: "/admin/dashboard",
+    icon:LayoutDashboard,
   },
   {
-    title: "Inbox",
-    url: "#",
-    icon: Inbox,
-  },
-  {
-    title: "Calendar",
-    url: "#",
-    icon: Calendar,
-  },
-  {
-    title: "Search",
-    url: "#",
-    icon: Search,
-  },
-  {
-    title: "Settings",
-    url: "#",
-    icon: Settings,
-  },
+    title: "Users",
+    url: "/admin/users",
+    icon: Users,
+  }
+
 ]
 
 export function AppSidebar() {
+
+  const pathname = usePathname();
+
   return (
-    <Sidebar variant="sidebar">
-      <SidebarContent>
-        <SidebarGroup>
-          <SidebarGroupLabel>Application</SidebarGroupLabel>
+    <Sidebar variant="sidebar" className="w-64 bg-white">
+      <SidebarContent >
+        <SidebarGroup className="bg-white min-h-full">
+          <SidebarGroupLabel className="text-lg mb-6">
+            <h1 className="text-gray-800 font-bold text-center">Pedoi Dashboard</h1>
+          </SidebarGroupLabel>
           <SidebarGroupContent>
             <SidebarMenu>
               {items.map((item) => (
                 <SidebarMenuItem key={item.title}>
                   <SidebarMenuButton asChild>
-                    <a href={item.url}>
-                      <item.icon />
+                    <a
+                      href={item.url}
+                      className={`flex items-center gap-2 px-2 py-1 rounded transition-colors ${
+                        pathname === item.url
+                          ? "text-primary bg-primary/10 font-semibold"
+                          : "text-muted-foreground"
+                      }`}
+                    >
+                      <item.icon size={20} />
                       <span>{item.title}</span>
                     </a>
                   </SidebarMenuButton>
