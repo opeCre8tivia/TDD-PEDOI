@@ -47,6 +47,7 @@ model Questionaire {
     county      String  
     subCounty   String 
     zone        String
+    aboutMembership String
     created_at DateTime @default(now())
     updated_at DateTime @default(now())
 }

@@ -35,10 +35,9 @@ const Page = () => {
     setError(result.error)
     return;
   }
-  if (result.token) {
-
-    //store token
-    localStorage.setItem("user_token",result.token);
+  if (result.hasQuestionaire) {
+    router.replace("/app/dashboard")
+  }else{
     router.replace("/app/questionaire")
   }
   setLoading(false);

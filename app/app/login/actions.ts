@@ -21,7 +21,9 @@ export async function loginUser({ email, password }: { email: string; password: 
     }
 
     cookieStore.set("user_token",data.token)
-    return {token:data.token};
+  
+    console.log(data.hasQuestionaire,'============ has qnr')
+    return {hasQuestionaire:data.hasQuestionaire};
   } catch (err: any) {
     console.log(err)
     return { error: "An unexpected error occurred." };

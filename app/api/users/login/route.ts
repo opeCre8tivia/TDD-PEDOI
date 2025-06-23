@@ -30,7 +30,15 @@ export async function POST(request: Request) {
       JWT_SECRET,
       { expiresIn: '1d' }
     );
-    return NextResponse.json({ token }, { status: 200 });
+
+      //check if user has a questionaire | if not redirect to questionaire
+
+    const questionaire = await prisma.questionaire.findUnique({
+      where:{
+        userId:user.id
+      }
+    })
+    return NextResponse.json({ token:token,hasQuestionaire:questionaire ? true : false }, { status: 200 });
   } catch (error: any) {
     return NextResponse.json({ error: error.message || 'Internal server error.' }, { status: 500 });
   }

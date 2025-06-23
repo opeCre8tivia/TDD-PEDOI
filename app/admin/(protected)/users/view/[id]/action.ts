@@ -6,7 +6,14 @@ const prisma = new PrismaClient();
 
 export async function getUserById(id: string) {
   if (!id) return null;
-  const user = await prisma.users.findUnique({ where: { id } });
+  const user = await prisma.users.findUnique({ 
+    where:{
+     id
+     },
+    include: {
+      questionaire: true,
+    },
+    });
   if (!user) return null;
   const { password, ...userData } = user;
   return userData;
