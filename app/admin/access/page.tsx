@@ -4,33 +4,37 @@ import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import Logo from "@/components/Logo"; // Adjust the import path if needed
+import loginAdmin from "./action";
+import { useRouter } from "next/navigation";
+import * as Yup from "yup"
+import { Formik } from "formik";
+import ErrorAlert from "@/components/ErrorAlert/ErrorAlert";
 
 const Page = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
+
+  const router = useRouter()
+
+  const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
+  
 
+  const handleLoginAdmin = async ({email,password}:{email:string,password:string}) => {
 
-  const handleSubmit = async (e: React.FormEvent) => {
-  e.preventDefault();
   setError("");
   setLoading(true);
   try {
-    const res = await fetch("/api/admin/login", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ email,password }),
-    });
-    const data = await res.json();
-    if (!res.ok) {
-      setError(data.error || "Login failed");
+    const res = await loginAdmin({
+      email:email,
+      password:password
+    })
+   
+    if (res?.error) {
+      setError(res.error);
       setLoading(false);
       return;
     }
-    if (data.token) {
-      localStorage.setItem("admin_token", data.token);
-      window.location.href = "/admin/dashboard";
+    if (res?.ok) {
+      router.replace("/admin/dashboard");
     }
   } catch (err) {
     setError("An unexpected error occurred.");
@@ -39,6 +43,13 @@ const Page = () => {
   setLoading(false);
 };
 
+
+  const validationSchema = Yup.object({
+  email: Yup.string().email("Invalid email address").required("Email is required"),
+  password: Yup.string().min(6, "Password must be at least 6 characters").required("Password is required"),
+});
+
+
   return (
     <main className="min-h-screen flex flex-col items-center justify-center bg-gray-50 px-4">
       <div className="w-full max-w-md bg-white rounded-lg shadow-md p-8 flex flex-col items-center">
@@ -46,40 +57,68 @@ const Page = () => {
         <h1 className="text-2xl font-bold mb-2 text-center">Pedoi Admin</h1>
         {/* <p className="mb-6 text-gray-500 text-center">Enter your credentials to access the admin panel.</p> */}
         
-            <form className="w-full  flex flex-col gap-4" onSubmit={handleSubmit}>
-                {error && (
-            <div className="text-red-500 text-sm text-center">{error}</div>
-)}
-          <div>
+          <Formik
+             onSubmit={(values,actions)=>{
+                 handleLoginAdmin(values)
+                 actions.resetForm()
+             }}
+             initialValues={{
+               email:"",
+               password:""
+             }}
+
+             validationSchema={validationSchema}
+           >
+            {({values,handleChange,errors,touched,handleSubmit})=>(
+
+                <div className="w-full h-auto flex flex-col justify-start items-center gap-4">
+            { error && <ErrorAlert
+               message={error ? error : ""}
+               onClose={()=> setError(null)}
+
+              />}
+                  
+          <div className="w-full">
             <Input
               id="email"
               type="email"
               placeholder="Enter Email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-              autoComplete="email"
+              value={values.email}
+              onChange={handleChange("email")}
+              
             />
+
+            {touched.email && errors.email && (
+             <div className="text-red-500 text-xs mt-1">{errors.email}</div>
+            )}
           </div>
-          <div>
+          <div className="w-full">
             <Input
               id="password"
               type="password"
               placeholder="Enter Password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              required
-              autoComplete="current-password"
+              value={values.password}
+              onChange={handleChange("password")}
+
+              
             />
+
+            {touched.password && errors.password && (
+             <div className="text-red-500 text-xs mt-1">{errors.password}</div>
+            )}
           </div>
-          <Button 
-          type="submit" 
-          className="w-full mt-2"
-          loading={loading}
-          >
-            Login
-          </Button>
-        </form>
+                <Button 
+                type="submit" 
+                className="w-full mt-2"
+                loading={loading}
+                onClick={()=>handleSubmit()}
+                >
+                    Login
+                </Button>
+          </div>
+            )}
+           </Formik>
+        
         </div>
    
     </main>
