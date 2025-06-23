@@ -1,14 +1,12 @@
 
 import React from "react";
+import { getDashboardStats } from "./actions";
 
-const stats = [
-  { label: "Total Users", value: 1200 },
-  { label: "Farmers", value: 800 },
-  { label: "Investors", value: 300 },
-  { label: "Farms", value: 150 },
-];
 
-const Page = () => {
+
+const Page = async() => {
+  const stats = await getDashboardStats();
+  
   return (
     <div className="w-full min-h-[50vh] p-6">
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
