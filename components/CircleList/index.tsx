@@ -47,7 +47,7 @@ const CircleList = () => {
   );
 
   return (
-    <div className="w-full h-fit bg-gray-200 md:flex justify-center md:justify-around gap-10  flex-wrap relative">
+    <div className="w-full h-fit bg-gray-200 hidden md:flex justify-center md:justify-around gap-10  flex-wrap relative">
       {list && list.map((item, index) => <RoundDiv item={item} key={index} />)}
     </div>
   );
