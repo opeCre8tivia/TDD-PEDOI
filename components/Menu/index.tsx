@@ -32,6 +32,9 @@ const Menu = () => {
             {item.title}
           </Link>
         ))}
+        <Link href="/app/login">
+          <Button className="ml-2">Login</Button>
+        </Link>
       </div>
       {/* Mobile Menu */}
       <div className="flex md:hidden items-center">

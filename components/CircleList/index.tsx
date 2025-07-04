@@ -25,7 +25,7 @@ const CircleList = () => {
       icon: <AiFillBulb color="green" size={40} />,
     },
     {
-      title: "ICT Cluster",
+      title: "Cocal Cluster",
       icon: <AiFillCalendar color="green" size={40} />,
     },
   ];
