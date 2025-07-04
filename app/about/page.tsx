@@ -2,7 +2,7 @@ import React from "react";
 import Logo from "@/components/Logo";
 import Image from "next/image";
 
-const AboutPage = () => {
+const Page = () => {
   return (
     <main className="min-h-screen bg-white flex flex-col items-center px-4 py-8">
       <section className="w-full max-w-2xl flex flex-col items-center text-center mb-8">
@@ -69,4 +69,4 @@ const AboutPage = () => {
   );
 };
 
-export default AboutPage;
+export default Page;
