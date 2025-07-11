@@ -29,7 +29,7 @@ const Aic = () => {
         </div>
 
         <div className="mt-6 mb-6 font-bold text-black text-[35px]">
-          Agricultral Intergration Center
+          Agricultre Intergration Center
         </div>
 
         <div className="text-gray-600 text-[16px]">

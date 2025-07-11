@@ -13,20 +13,24 @@ const CircleList = () => {
 
   const _list = [
     {
-      title: "Development",
-      icon: <AiFillBook color="green" size={40} />,
+      title: "Development Benchmarks",
+      icon: <AiFillBook color="green" size={30} />,
     },
     {
-      title: "Enterprise",
-      icon: <AiFillApple color="green" size={40} />,
+      title: "Enterprise Development",
+      icon: <AiFillApple color="green" size={30} />,
     },
     {
-      title: "Casava Cluster",
-      icon: <AiFillBulb color="green" size={40} />,
+      title: "Financial Inclusin",
+      icon: <AiFillBulb color="green" size={30} />,
     },
     {
-      title: "Cocal Cluster",
-      icon: <AiFillCalendar color="green" size={40} />,
+      title: "Technology Integration",
+      icon: <AiFillCalendar color="green" size={30} />,
+    },
+    {
+      title: "Environment Conservation",
+      icon: <AiFillCalendar color="green" size={30} />,
     },
   ];
 
@@ -37,10 +41,10 @@ const CircleList = () => {
 
   let RoundDiv = ({ item }: any) => (
     <div className=" h-fit w-auto flex flex-col items-center justify-center relative top-[-60px]">
-      <div className="w-[100px] h-[100px]  rounded-full bg-white p-2 m-3 flex justify-center items-center">
+      <div className="w-[80px] h-[80px]  rounded-full bg-white p-2 m-3 flex justify-center items-center">
         {item.icon}
       </div>
-      <div className="m-6 font-bold text-[16px] text-gray-600 text-center uppercase">
+      <div className="m-2 font-bold text-[14px] text-gray-600 text-center uppercase">
         {item.title}
       </div>
     </div>
