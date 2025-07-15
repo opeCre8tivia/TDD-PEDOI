@@ -1,8 +1,40 @@
-import React from "react";
+"use client"
+
+
+import React, { useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import emailjs from '@emailjs/browser';
 
 const ContactPage = () => {
+
+    const form:any = useRef(null);
+
+  const sendEmail = (e: any) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "service_hd1x509",
+        "template_rz2t1hf",
+        form.current,
+        "bhcs8KRNTyxHgcgrC"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+          console.log("email sent");
+          // notify();
+          form.current.reset();
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+  };
+
+
+
   return (
     <main className="min-h-screen bg-white flex flex-col items-center px-4 py-8">
       <section className="w-full max-w-2xl flex flex-col items-center text-center mb-8">
@@ -20,7 +52,11 @@ const ContactPage = () => {
           <span className="text-gray-700 text-sm">Kampala, Uganda</span>
         </div>
         {/* Contact Form */}
-        <form className="flex flex-col gap-4 bg-white rounded-lg shadow p-6">
+        <form 
+          ref={form}
+          onSubmit={sendEmail}
+          className="flex flex-col gap-4 bg-white rounded-lg shadow p-6"
+        >
           <h2 className="text-xl font-semibold text-primary mb-2">Send Us a Message</h2>
           <Input type="text" placeholder="Your Name" required />
           <Input type="email" placeholder="Your Email" required />
