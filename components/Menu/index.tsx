@@ -16,8 +16,8 @@ const Menu = () => {
   const [open, setOpen] = useState(false);
   const _menu: Array<MenuItem> = [
     { id: 1, title: "Home", href: "/" },
-    { id: 2, title: "About us", href: "#" },
-    { id: 3, title: "Contact", href: "#" }
+    { id: 2, title: "About us", href: "/about" },
+    { id: 3, title: "Contact", href: "/contact" }
   ];
   return (
     <>

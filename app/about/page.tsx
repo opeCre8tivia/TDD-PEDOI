@@ -1,10 +1,13 @@
 import React from "react";
 import Logo from "@/components/Logo";
 import Image from "next/image";
+import NavBar from "@/components/NavBar";
+import Footer from "@/components/Footer";
 
 const Page = () => {
   return (
     <main className="min-h-screen bg-white flex flex-col items-center px-4 py-8">
+      <NavBar />
       <section className="w-full max-w-2xl flex flex-col items-center text-center mb-8">
         <Logo styles={{ width: "80px", height: "80px" }} />
         <h1 className="text-3xl md:text-4xl font-bold text-primary mt-4 mb-2">About PEDOI</h1>
@@ -65,6 +68,8 @@ const Page = () => {
           Get Started
         </a>
       </section>
+      <div className="h-4"></div>
+      <Footer />
     </main>
   );
 };

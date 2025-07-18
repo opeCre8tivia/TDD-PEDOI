@@ -1,9 +1,7 @@
 import React from "react";
 import Logo from "../Logo";
-import { AiOutlineMenu } from "react-icons/ai";
 import Menu from "../Menu";
-import { Button } from "../ui/button";
-import Link from "next/link";
+
 
 const NavBar = () => {
   return (

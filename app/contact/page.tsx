@@ -5,6 +5,9 @@ import React, { useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import emailjs from '@emailjs/browser';
+import { Nav } from "hero-slider";
+import NavBar from "@/components/NavBar";
+import Footer from "@/components/Footer";
 
 const ContactPage = () => {
 
@@ -37,6 +40,7 @@ const ContactPage = () => {
 
   return (
     <main className="min-h-screen bg-white flex flex-col items-center px-4 py-8">
+      <NavBar />
       <section className="w-full max-w-2xl flex flex-col items-center text-center mb-8">
         <h1 className="text-3xl md:text-4xl font-bold text-primary mb-2">Contact Us</h1>
         <p className="text-gray-700 text-base md:text-lg mb-4">
@@ -47,9 +51,10 @@ const ContactPage = () => {
         {/* Contact Info */}
         <div className="flex flex-col gap-4 bg-primary/10 rounded-lg p-6">
           <h2 className="text-xl font-semibold text-primary mb-2">Contact Information</h2>
-          <span className="text-gray-700 text-sm">Email: <a href="mailto:info@pedoiltd.org" className="underline">info@pedoi.org</a></span>
-          <span className="text-gray-700 text-sm">Phone: +256 700 000 000</span>
-          <span className="text-gray-700 text-sm">Kampala, Uganda</span>
+          <span className="text-gray-700 text-sm">Address HQ: Soroti City, UGANDA</span>
+          <span className="text-gray-700 text-sm">General enquiries: +256757347775</span>
+          <span className="text-gray-700 text-sm">Transactions: +256765223148</span>
+          <span className="text-gray-700 text-sm">E mail: <a href="mailto:pedoiltd@gmail.com" className="underline">pedoiltd@gmail.com</a></span>
         </div>
         {/* Contact Form */}
         <form 
@@ -69,19 +74,7 @@ const ContactPage = () => {
           <Button type="submit" className="w-full mt-2">Send Message</Button>
         </form>
       </section>
-      {/* Map Section (optional) */}
-      <section className="w-full max-w-3xl flex flex-col items-center mt-8">
-        <h2 className="text-lg font-semibold text-primary mb-2">Our Location</h2>
-        <div className="w-full h-56 rounded-lg overflow-hidden shadow">
-          <iframe
-            title="PEDOI Location"
-            src="https://www.openstreetmap.org/export/embed.html?bbox=32.5825%2C0.3476%2C32.5825%2C0.3476&amp;layer=mapnik"
-            className="w-full h-full border-0"
-            allowFullScreen
-            loading="lazy"
-          ></iframe>
-        </div>
-      </section>
+      <Footer />
     </main>
   );
 };
