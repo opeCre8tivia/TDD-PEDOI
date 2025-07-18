@@ -13,7 +13,7 @@ const CircleList = () => {
 
   const _list = [
     {
-      title: "Development Benchmarks",
+      title: "Development Benchmarks (SDGs)",
       icon: <AiFillBook color="green" size={30} />,
     },
     {

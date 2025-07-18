@@ -2,6 +2,7 @@
 
 import React from "react";
 import BlockButton from "../BlockButton";
+import Link from "next/link";
 
 const Hero = () => {
   return (
@@ -10,12 +11,17 @@ const Hero = () => {
         <div className=" w-[90%] md:w-[60%] mb-8 text-[25px] md:text-[40px] font-extrabold  text-white text-center">
            Empowering Cocoa farmers for a sustainable today to tomorrow
         </div>
+        <div className="w-[90%] md:w-[60%] mb-8 text-[16px] md:text-[20px] font-semibold text-white text-center">
+          Join us in revolutionizing the cocoa industry with our innovative platform, connecting farmers, buyers, and consumers for a sustainable future.
+        </div>
         {/* two btn container */}
         <div className="w-full h-auto flex  flex-wrap justify-center gap-4 items-center ">
-          <BlockButton
-            onClick={() => console.log("cliq")}
-            title="Learn More"
+          <Link href={"/app/register"}>
+            <BlockButton
+            onClick={() => {}}
+            title="REGISTER NOW"
           />
+          </Link>
           {/* <BlockButton
             onClick={() => console.log("cliq")}
             title="LEARN MORE"

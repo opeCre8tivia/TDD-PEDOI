@@ -40,10 +40,10 @@ const Footer = () => {
             Email: info@pedoiltd.org
           </span>
           <span className="text-green-100 text-sm">
-            Phone: +256 700 000 000
+            Phone: +256 757 347 775
           </span>
           <span className="text-green-100 text-sm">
-            Kampala, Uganda
+            Soroti City, Uganda
           </span>
         </div>
       </div>

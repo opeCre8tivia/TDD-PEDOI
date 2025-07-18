@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { AiOutlineMenu } from "react-icons/ai";
 import { Button } from "../ui/button";
+import { usePathname } from "next/navigation";
 
 interface MenuItem {
   id: number;
@@ -14,6 +15,7 @@ interface MenuItem {
 
 const Menu = () => {
   const [open, setOpen] = useState(false);
+  const pathname = usePathname();
   const _menu: Array<MenuItem> = [
     { id: 1, title: "Home", href: "/" },
     { id: 2, title: "About us", href: "/about" },
@@ -27,7 +29,7 @@ const Menu = () => {
           <Link
             key={item.id}
             href={item.href}
-            className="text-[16px] font-semibold text-gray-600 text-center hover:text-green-300"
+            className={`text-[16px] font-semibold text-center hover:text-green-300 ${pathname === item.href ? "text-green-500" : "text-gray-600"}`}
           >
             {item.title}
           </Link>
@@ -50,7 +52,7 @@ const Menu = () => {
                 <Link
                   key={item.id}
                   href={item.href}
-                  className="text-lg font-semibold text-gray-700 hover:text-primary py-2"
+                  className={`text-lg font-semibold py-2 hover:text-primary ${pathname === item.href ? "text-green-500" : "text-gray-700"}`}
                   onClick={() => setOpen(false)}
                 >
                   {item.title}
@@ -59,10 +61,10 @@ const Menu = () => {
             </nav>
             <div className="w-full px-2">
               <Link href={"/app/login"}>
-             <Button style={{width:"100%"}}>
-              Login
-             </Button>
-            </Link>
+                <Button style={{ width: "100%" }}>
+                  Login
+                </Button>
+              </Link>
             </div>
           </SheetContent>
         </Sheet>
