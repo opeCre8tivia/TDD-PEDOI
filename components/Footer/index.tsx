@@ -37,10 +37,10 @@ const Footer = () => {
         <div className="flex flex-col gap-2 items-center md:items-start md:w-1/3">
           <h3 className="font-semibold mb-1">Contact Us</h3>
           <span className="text-green-100 text-sm">
-            Email: info@pedoiltd.org
+            Email: info@pedoiltd.org | pedoiltd@gmail.com
           </span>
           <span className="text-green-100 text-sm">
-            Phone: +256 757 347 775
+            Phone: +256 757 347 775 | +256 765 2231 148
           </span>
           <span className="text-green-100 text-sm">
             Soroti City, Uganda
