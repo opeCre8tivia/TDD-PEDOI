@@ -40,7 +40,7 @@ const Footer = () => {
             Email: info@pedoiltd.org | pedoiltd@gmail.com
           </span>
           <span className="text-green-100 text-sm">
-            Phone: +256 757 347 775 | +256 765 2231 148
+            Phone: +256 757 347 775 | +256 765 223 148
           </span>
           <span className="text-green-100 text-sm">
             Soroti City, Uganda
